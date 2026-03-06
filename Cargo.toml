@@ -1,5 +1,5 @@
 [package]
-name = "old_hackerrank_solutions"
+name = "hacker_rank_solutions"
 version = "0.1.0"
 edition = "2024"
 
@@ -13,6 +13,13 @@ rand = "0.8"
 [[bench]]
 name = "printie_bench"
 path = "src/bin/proj_a/benches/a_bench.rs"
+harness = false
+bench = true
+#bench = false
+
+[[bench]]
+name = "palindrome_bench"
+path = "src/bin/nontrivial_palindrome/benches/pali_bench.rs"
 harness = false
 bench = true
 #bench = false

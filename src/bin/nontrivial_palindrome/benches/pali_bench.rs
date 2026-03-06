@@ -1,3 +1,4 @@
+use std::hint::black_box;
 use criterion::{criterion_group, criterion_main, Criterion};
 use rand::Rng;
 use palindrome::printer;
@@ -11,8 +12,8 @@ pub fn criterion_benchmark(c: &mut Criterion) {
 	c.bench_function("palindrome", |b| {
 		b.iter(|| {
 			std::hint::black_box(for i in 1..=100 {
-				let num = rand::thread_rng().gen_range(0..100);
-				_ = printer(num);
+				let input = black_box("abc!def<>?fed&cba");
+				_ = isAlphabeticPalindrome(input);
 			});
 		});
 	});
