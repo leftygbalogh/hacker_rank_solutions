@@ -1,0 +1,18 @@
+[package]
+name = "old_hackerrank_solutions"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+criterion = "0.8.2"
+lib = "0.0.2-build"
+gnuplot = "0.0.46"
+log = "0.4.29"
+rand = "0.8"
+
+[[bench]]
+name = "printie_bench"
+path = "src/bin/proj_a/benches/a_bench.rs"
+harness = false
+bench = true
+#bench = false
