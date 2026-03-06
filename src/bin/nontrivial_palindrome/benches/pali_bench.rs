@@ -1,10 +1,11 @@
 use std::hint::black_box;
 use criterion::{criterion_group, criterion_main, Criterion};
 use rand::Rng;
-use palindrome::printer;
 
-#[path = "../nontrivial_palindrome"]
+
+#[path = "../palindrome.rs"]
 mod palindrome;
+use palindrome::isAlphabeticPalindrome;
 
 //cargo bench --benches
 pub fn criterion_benchmark(c: &mut Criterion) {
