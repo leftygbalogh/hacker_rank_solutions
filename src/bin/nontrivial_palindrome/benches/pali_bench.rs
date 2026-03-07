@@ -14,7 +14,7 @@ pub fn criterion_benchmark1(c: &mut Criterion) {
 
 	c.bench_function("palindrome one", |b| {
 		b.iter(|| {
-			std::hint::black_box(for i in 1..=100 {
+			std::hint::black_box(for _ in 1..=100 {
 				let input = black_box("abc!def<>?fed&cba");
 				_ = isAlphabeticPalindrome(input);
 			});
