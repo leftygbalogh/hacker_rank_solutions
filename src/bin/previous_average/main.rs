@@ -4,7 +4,7 @@ mod screen;
 use std::io::{self, BufRead};
 
 /*
- * Complete the 'countResponseTimeRegressions' function below.
+ * Complete the 'count_response_time_regressions' function below.
  *
  * The function is expected to return an INTEGER.
  * The function accepts INTEGER_ARRAY responseTimes as parameter.
@@ -18,7 +18,7 @@ fn main() {
 	let stdin = io::stdin();
 	let mut stdin_iterator = stdin.lock().lines();
 
-	let responseTimes_count = stdin_iterator
+	let response_times_count = stdin_iterator
 		.next()
 		.unwrap()
 		.unwrap()
@@ -26,20 +26,20 @@ fn main() {
 		.parse::<i32>()
 		.unwrap();
 
-	let mut responseTimes: Vec<i32> = Vec::with_capacity(responseTimes_count as usize);
+	let mut response_times: Vec<i32> = Vec::with_capacity(response_times_count as usize);
 
-	for _ in 0..responseTimes_count {
-		let responseTimes_item = stdin_iterator
+	for _ in 0..response_times_count {
+		let response_times_item: i32 = stdin_iterator
 			.next()
 			.unwrap()
 			.unwrap()
 			.trim()
 			.parse::<i32>()
 			.unwrap();
-		responseTimes.push(responseTimes_item);
+		response_times.push(response_times_item);
 	}
 
-	let result = prev_avg_proj_lib::countResponseTimeRegressions(&responseTimes);
+	let result = prev_avg_proj_lib::count_response_time_regressions(&response_times);
 
 	println!("{}", result);
 }

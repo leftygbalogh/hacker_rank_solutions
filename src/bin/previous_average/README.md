@@ -7,7 +7,7 @@ Given an array of positive integers, return the number of elements that are stri
 Example
 
 Input
-responseTimes = [100, 200, 150,300]
+response_times = [100, 200, 150,300]
 
 Output
 2
@@ -20,7 +20,7 @@ Explanation
 
 Input Format
 The first line contains an integer n (0 ≤ n ≤ 1000), the number of days.
-If n > 0, the next n lines contains an integer representing responseTimes[i].
+If n > 0, the next n lines contains an integer representing response_times[i].
 If n = 0, the second line is omitted or empty.
 
 Example
@@ -33,8 +33,8 @@ Example
 Here 4 is the length of array, followed by the elements of array on each line.
 
 Constraints
-0 <= responseTimes.length <= 1000
-1 <= responseTimes[i] <= 10^9 for 0 <= i < responseTimes.length
+0 <= response_times.length <= 1000
+1 <= response_times[i] <= 10^9 for 0 <= i < response_times.length
 
 Output Format
 A single integer depicting the count of days.

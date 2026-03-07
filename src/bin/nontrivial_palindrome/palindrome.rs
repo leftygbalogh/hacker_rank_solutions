@@ -1,5 +1,18 @@
 
-pub fn isAlphabeticPalindrome(code: &str) -> bool {
+/// 
+/// 
+/// # Arguments 
+/// 
+/// * `code`: 
+/// 
+/// returns: bool 
+/// 
+/// # Examples 
+/// 
+/// ```
+/// 
+/// ```
+pub fn is_alphabetic_palindrome(code: &str) -> bool {
 	let code = code
 		.chars()
 		.filter(|&c| c.is_alphabetic())
@@ -30,5 +43,5 @@ mod tests {
 
 	fn _data_runner(data: [(&str, bool); 8]) {
 		for d in data.iter() {
-			assert_eq!(isAlphabeticPalindrome(d.0), d.1);
+			assert_eq!(is_alphabetic_palindrome(d.0), d.1);
 		} } }

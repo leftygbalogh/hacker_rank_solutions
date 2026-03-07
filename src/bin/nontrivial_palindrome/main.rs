@@ -4,7 +4,7 @@ mod screen;
 use std::io::{self, BufRead};
 //use hackerrank_solutions::palindrome;
 /*
- * Complete the 'isAlphabeticPalindrome' function below.
+ * Complete the 'is_alphabetic_palindrome' function below.
  *
  * The function is expected to return a BOOLEAN.
  * The function accepts STRING code as parameter.
@@ -19,7 +19,7 @@ fn main() {
 
 	let code = stdin_iterator.next().unwrap().unwrap();
 
-	let result = palindrome::isAlphabeticPalindrome(&code);
+	let result = palindrome::is_alphabetic_palindrome(&code);
 
 	println!("{}", if result { 1 } else { 0 });
 }
