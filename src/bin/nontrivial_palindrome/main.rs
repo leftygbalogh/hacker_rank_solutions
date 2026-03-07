@@ -1,5 +1,6 @@
 mod palindrome;
-
+#[path = "../util/screen.rs"]
+mod screen;
 use std::io::{self, BufRead};
 //use hackerrank_solutions::palindrome;
 /*
@@ -11,7 +12,7 @@ use std::io::{self, BufRead};
 
 //cargo run --bin nontrivial_palindrome
 fn main() {
-	println!("\x1b[2J\x1b[H\x1b[3J");
+	screen::clear();
 	println!("nontrivial palindrome");
 	let stdin = io::stdin();
 	let mut stdin_iterator = stdin.lock().lines();

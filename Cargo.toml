@@ -10,6 +10,9 @@ gnuplot = "0.0.46"
 log = "0.4.29"
 rand = "0.8"
 
+
+#Run with
+#clear; cargo bench --benches
 [[bench]]
 name = "printie_bench"
 path = "src/bin/proj_a/benches/a_bench.rs"
@@ -21,5 +24,5 @@ bench = true
 name = "palindrome_bench"
 path = "src/bin/nontrivial_palindrome/benches/pali_bench.rs"
 harness = false
-bench = true
-#bench = false
+#bench = true
+bench = false

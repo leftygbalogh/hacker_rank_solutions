@@ -1,7 +1,7 @@
 use rand::prelude::ThreadRng;
 
 pub fn printer(input: i32) -> i32 {
-	println!("Hello, from proj from bin! {}", &input);
+	print!("{}", &input);
 	input
 }
 
