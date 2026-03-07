@@ -1,5 +1,3 @@
-use rand::prelude::ThreadRng;
-
 pub fn printer(input: i32) -> i32 {
 	print!("{}", &input);
 	input
