@@ -11,7 +11,7 @@ pub fn isAlphabeticPalindrome(code: &str) -> bool {
 		.rev()
 		.collect::<String>();
 
-	&code == &reverse
+	code == reverse
 }
 
 #[cfg(test)]

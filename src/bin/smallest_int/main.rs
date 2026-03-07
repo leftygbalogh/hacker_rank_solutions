@@ -3,9 +3,10 @@ mod smallest_int_lib;
 #[path = "../util/screen.rs"]
 mod screen;
 use std::io::{self, BufRead};
+use crate::screen::clear;
 
 fn main() {
-	println!("\x1b[2J\x1b[H\x1b[3J");
+	clear();
 	let stdin = io::stdin();
 	let mut stdin_iterator = stdin.lock().lines();
 

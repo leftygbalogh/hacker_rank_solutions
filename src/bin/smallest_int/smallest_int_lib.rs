@@ -47,9 +47,9 @@ mod tests {
 			expected_result: 4,
 		};
 
-		let tdlist = [td1, td2, td3];
+		let test_data_list: [TestData; 3] = [td1, td2, td3];
 
-		for td in tdlist.iter() {
+		for td in test_data_list.iter() {
 			println!("{:?}", &td.input_data);
 			assert_eq!(
 				find_smallest_missing_positive(&[1, 2, 3, 5]),
