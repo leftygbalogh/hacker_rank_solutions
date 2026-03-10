@@ -22,27 +22,36 @@ pub fn original(order_numbers: &[i64]) -> i64 {
     index
 }
 
-pub fn manuels(order_numbers: &mut [i64]) -> i64 {
+pub fn manuels(order_numbers: &[i64]) -> i64 {
     if order_numbers.is_empty() {
         return 1;
     }
 
-	let mut on: & mut [i64] = order_numbers;
-    let (mut length): i64 = on.len() as i64;
-    for number in on {
-        println!("length {}, number {}", length, number);
-		if (&0 < number) && (number <= &mut length) {
-			if *number != on[*number as usize - 1] {
-				let temp = on[*number as usize - 1];
-				on[0] = 1;
-				let temp = on[*number as usize - 1];
-
+	let mut order_numbers_vec = order_numbers.to_vec();
+	let length = order_numbers_vec.len();
+	let mut index = 0;
+	while index < length {
+		let value = order_numbers_vec[index];
+		if value >0 && value <= length as i64 {
+			let target_index = (value - 1) as usize;
+			if order_numbers_vec[target_index] != value {
+				order_numbers_vec.swap(index, target_index);
 			}
-
 		}
-    }
+		index += 1;
+	}
+	//println!("{:?}", order_numbers_vec);
 
-    42
+	let mut index = 0;
+	while index < length {
+		let value = order_numbers_vec[index];
+		if value != (index + 1) as i64{
+			return (index + 1) as i64
+		}
+		index += 1;
+	}
+
+	(index + 1) as i64
 }
 
 pub fn find_smallest_missing_positive(order_numbers: &[i64]) -> i64 {
