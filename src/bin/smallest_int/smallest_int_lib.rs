@@ -22,14 +22,22 @@ pub fn original(order_numbers: &[i64]) -> i64 {
     index
 }
 
-pub fn manuels(order_numbers: &[i64]) -> i64 {
+pub fn manuels(order_numbers: &mut [i64]) -> i64 {
     if order_numbers.is_empty() {
         return 1;
     }
-    let length = order_numbers.len() as i64;
-    for number in order_numbers {
+
+	let mut on: & mut [i64] = order_numbers;
+    let (mut length): i64 = on.len() as i64;
+    for number in on {
         println!("length {}, number {}", length, number);
-		if number <= &length {
+		if (&0 < number) && (number <= &mut length) {
+			if *number != on[*number as usize - 1] {
+				let temp = on[*number as usize - 1];
+				on[0] = 1;
+				let temp = on[*number as usize - 1];
+
+			}
 
 		}
     }
