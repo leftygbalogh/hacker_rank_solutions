@@ -14,8 +14,15 @@ rand = "0.8"
 #Run with
 #clear; cargo bench --benches
 [[bench]]
-name = "printie_bench"
+name = "template_bench"
 path = "src/bin/proj_a/benches/a_bench.rs"
+harness = false
+#bench = true
+bench = false
+
+[[bench]]
+name = "smallest_int_bench"
+path = "src/bin/smallest_int/benches/smallest_int_bench.rs"
 harness = false
 bench = true
 #bench = false

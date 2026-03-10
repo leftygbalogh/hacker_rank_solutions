@@ -33,5 +33,6 @@ fn main() {
 
 	let result = smallest_int_lib::find_smallest_missing_positive(&order_numbers);
 
+
 	println!("{}", result);
 }
