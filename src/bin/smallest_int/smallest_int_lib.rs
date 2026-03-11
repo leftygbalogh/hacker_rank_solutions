@@ -22,6 +22,19 @@ pub fn original(order_numbers: &[i64]) -> i64 {
     index
 }
 
+pub fn revised(order_numbers: &[i64]) -> i64 {
+	use std::collections::BTreeSet;
+	let set: BTreeSet<i64> = order_numbers.iter().copied().filter(|&x| x >0).collect::<BTreeSet<_>>().into_iter().collect();
+	let mut index = 1;
+	for value in set {
+		if value != index {
+			return index;
+		}
+		index += 1;
+	}
+	index
+}
+
 pub fn manuels(order_numbers: &[i64]) -> i64 {
     if order_numbers.is_empty() {
         return 1;
@@ -55,27 +68,10 @@ pub fn manuels(order_numbers: &[i64]) -> i64 {
 }
 
 pub fn find_smallest_missing_positive(order_numbers: &[i64]) -> i64 {
-    //original(order_numbers)
-	manuels(order_numbers)
-    // if order_numbers.is_empty() {
-    // 	return 1;
-    // }
-    //
-    // use std::collections::BTreeSet;
-    //
-    // let btset = order_numbers.iter().collect::<BTreeSet<_>>();
-    // let set = btset.iter().filter(|x| x > &&&0);
-    //
-    // let _ = order_numbers;
-    // let mut index = 1;
-    // for value in set {
-    // 	if value != &&index {
-    // 		return index;
-    // 	}
-    // 	index += 1;
-    // }
-    // index
-}
+    original(order_numbers)
+	//revised(order_numbers)
+	//manuels(order_numbers)
+  }
 
 #[cfg(test)]
 mod tests {
