@@ -1,6 +1,6 @@
 //cargo test --bin proj_a
 
-//#[inline (always)]
+//#[inline]
 pub fn original(order_numbers: &[i64]) -> i64 {
     if order_numbers.is_empty() {
         return 1;
@@ -22,6 +22,7 @@ pub fn original(order_numbers: &[i64]) -> i64 {
     index
 }
 
+//#[inline]
 pub fn revised(order_numbers: &[i64]) -> i64 {
 	use std::collections::BTreeSet;
 	let set: BTreeSet<i64> = order_numbers.iter().copied().filter(|&x| x >0).collect::<BTreeSet<_>>().into_iter().collect();
@@ -35,6 +36,7 @@ pub fn revised(order_numbers: &[i64]) -> i64 {
 	index
 }
 
+//#[inline]
 pub fn manuels(order_numbers: &[i64]) -> i64 {
     if order_numbers.is_empty() {
         return 1;
@@ -53,7 +55,6 @@ pub fn manuels(order_numbers: &[i64]) -> i64 {
 		}
 		index += 1;
 	}
-	//println!("{:?}", order_numbers_vec);
 
 	let mut index = 0;
 	while index < length {
@@ -68,9 +69,9 @@ pub fn manuels(order_numbers: &[i64]) -> i64 {
 }
 
 pub fn find_smallest_missing_positive(order_numbers: &[i64]) -> i64 {
-    original(order_numbers)
+    //original(order_numbers)
 	//revised(order_numbers)
-	//manuels(order_numbers)
+	manuels(order_numbers)
   }
 
 #[cfg(test)]
