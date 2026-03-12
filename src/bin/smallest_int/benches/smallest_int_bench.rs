@@ -286,18 +286,6 @@ pub fn criterion_benchmark(c: &mut Criterion) {
                 expected_result3
             );
         });
-		b.iter(|| {
-			assert_eq!(
-				revised(std::hint::black_box(input3)),
-				expected_result3
-			);
-		});
-		b.iter(|| {
-			assert_eq!(
-				manuels(std::hint::black_box(input3)),
-				expected_result3
-			);
-		});
     });
     c.bench_function(
         "Smallest Int random btw -99999 and 99999 , No assert Bench:\n",
